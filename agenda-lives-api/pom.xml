@@ -6,7 +6,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.4.1</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
     <groupId>com</groupId>
     <artifactId>agenda-live</artifactId>
@@ -16,6 +16,9 @@
 
     <properties>
         <java.version>11</java.version>
+        <org.mapstruct.version>1.4.1.Final</org.mapstruct.version>
+        <maven-compiler-plugin.source>11</maven-compiler-plugin.source>
+        <lombok.version>1.18.12</lombok.version>
     </properties>
 
     <dependencies>
@@ -44,9 +47,14 @@
             <scope>runtime</scope>
         </dependency>
         <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${org.mapstruct.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <optional>true</optional>
+            <version>${lombok.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

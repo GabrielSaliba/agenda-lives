@@ -1,5 +1,6 @@
 package com.agendalive.service;
 
+import com.agendalive.domain.dto.LiveDTO;
 import com.agendalive.domain.entity.Live;
 import com.agendalive.repository.LiveRepository;
 import lombok.RequiredArgsConstructor;
@@ -11,8 +12,8 @@ public class LiveService {
 
     private final LiveRepository liveRepository;
 
-    public Live saveLive(Live live) {
+    public Live saveLive(LiveDTO live) {
         live.setId(null);
-        return liveRepository.save(live);
+        return null;
     }
 }

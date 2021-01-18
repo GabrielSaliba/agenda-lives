@@ -1,5 +1,6 @@
 package com.agendalive.controller;
 
+import com.agendalive.domain.dto.LiveDTO;
 import com.agendalive.domain.entity.Live;
 import com.agendalive.service.LiveService;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +17,7 @@ public class LiveController {
     private final LiveService liveService;
 
     @GetMapping
-    public Live saveLive(@RequestBody Live live) {
+    public Live saveLive(@RequestBody LiveDTO live) {
         return liveService.saveLive(live);
     }
 }
