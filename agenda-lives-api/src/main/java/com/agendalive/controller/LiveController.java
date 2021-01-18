@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/live")
 @RequiredArgsConstructor
@@ -17,7 +19,7 @@ public class LiveController {
     private final LiveService liveService;
 
     @GetMapping
-    public Live saveLive(@RequestBody LiveDTO live) {
+    public Live saveLive(@RequestBody @Valid LiveDTO live) {
         return liveService.saveLive(live);
     }
 }
