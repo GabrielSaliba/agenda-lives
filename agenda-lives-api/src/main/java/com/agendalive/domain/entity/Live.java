@@ -22,11 +22,11 @@ public class Live {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @Column(nullable = false)
+    @Column
     @CreationTimestamp
     LocalDateTime creationDate;
 
-    @Column(nullable = false)
+    @Column
     @UpdateTimestamp
     LocalDateTime updateDate;
 
@@ -42,9 +42,9 @@ public class Live {
     @Column(nullable = false, length = 50)
     LocalDateTime startDate;
 
-    @Column(length = 50)
+    @Column(nullable = false, length = 50)
     LocalDateTime endDate;
 
-    @Column(nullable = false)
+    @Column
     LiveStatus status;
 }

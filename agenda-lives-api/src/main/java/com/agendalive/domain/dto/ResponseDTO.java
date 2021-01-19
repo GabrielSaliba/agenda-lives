@@ -1,4 +1,4 @@
-package com.agendalive.controller;
+package com.agendalive.domain.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

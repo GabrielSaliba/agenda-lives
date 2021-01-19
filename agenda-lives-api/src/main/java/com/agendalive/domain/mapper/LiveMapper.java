@@ -11,5 +11,7 @@ public interface LiveMapper {
 
     Live toEntity(LiveDTO liveDTO);
 
+    LiveDTO toDto(Live live);
+
     List<LiveDTO> toDtoList(List<Live> liveList);
 }
