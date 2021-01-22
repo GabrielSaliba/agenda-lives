@@ -1,0 +1,14 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    database: HSQL
+    properties:
+      hibernate.dialect: org.hibernate.dialect.HSQLDialect
+  datasource:
+    driver-class-name: org.hsqldb.jdbcDriver
+    url: jdbc:hsqldb:mem:scratchdb
+    username: root
+    password: root
+  profiles:
+    active: test
