@@ -25,7 +25,15 @@ public class LiveMock {
         return live;
     }
 
+    public Live persistLive(Live live) {
+        return liveRepository.save(live);
+    }
+
     public Live persistLive() {
         return liveRepository.save(mockLive());
+    }
+
+    public Live getLive(Long id) {
+        return liveRepository.findById(id).orElse(null);
     }
 }

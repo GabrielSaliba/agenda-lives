@@ -65,6 +65,15 @@ public class LiveService {
         return new ResponseDTO(HttpStatus.OK, "Lives status updated");
     }
 
+    public ResponseDTO updateLive(LiveDTO liveDTO) {
+        if(liveDTO.getId() == null || Boolean.FALSE.equals(liveRepository.existsById(liveDTO.getId()))) {
+            throw liveNotFound();
+        }
+
+        liveRepository.save(liveMapper.toEntity(liveDTO));
+        return new ResponseDTO(HttpStatus.OK, "Live updated", liveDTO.getId().toString());
+    }
+
     public ResponseStatusException liveNotFound() {
         return liveNotFound(null);
     }
@@ -75,14 +84,5 @@ public class LiveService {
 
     public ResponseStatusException incorrectDate() {
         throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Wrong date parameters");
-    }
-
-    public ResponseDTO updateLive(LiveDTO liveDTO) {
-        if(liveDTO.getId() == null || Boolean.FALSE.equals(liveRepository.existsById(liveDTO.getId()))) {
-            throw liveNotFound();
-        }
-
-        liveRepository.save(liveMapper.toEntity(liveDTO));
-        return new ResponseDTO(HttpStatus.OK, "Live updated", liveDTO.getId().toString());
     }
 }
