@@ -47,7 +47,6 @@ public class LiveService {
         return new ResponseDTO(HttpStatus.OK, "Live deleted", id.toString());
     }
 
-
     public ResponseDTO updateLiveStatus() {
         List<Live> livesList = liveRepository.findAll();
         LocalDateTime now = LocalDateTime.now();
@@ -75,7 +74,7 @@ public class LiveService {
     }
 
     public ResponseStatusException liveNotFound() {
-        return liveNotFound(null);
+        return liveNotFound(0L);
     }
 
     public ResponseStatusException liveNotFound(Long id) {
